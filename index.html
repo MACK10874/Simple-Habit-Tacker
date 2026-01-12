@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Habit Tracker</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<div class="container">
+    <h1>Habit Tracker</h1>
+    <p>Track your daily habits and stay consistent</p>
+
+    <div class="date">
+        <script>
+            document.write(new Date().toDateString());
+        </script>
+    </div>
+
+    <div class="progress-box">
+        <div class="progress-text">
+            Completed {{ completed }} / {{ total }} habits
+        </div>
+        <div class="progress-bar">
+            <div class="progress-fill" style="width: {{ progress }}%"></div>
+        </div>
+    </div>
+
+    <form method="POST">
+        <input type="text" name="habit" placeholder="Enter a new habit" required>
+        <button type="submit">Add</button>
+    </form>
+
+    <ul>
+        {% for habit in habits %}
+        <li class="{{ 'done' if habit[2] == 1 else '' }}">
+            <span>{{ habit[1] }}</span>
+            {% if habit[3] > 0 %}
+                <small>🔥 Streak: {{ habit[3] }} days</small>
+            {% endif %}
+            <div class="actions">
+                {% if habit[2] == 0 %}
+                    <a class="complete" href="/complete/{{ habit[0] }}">✔</a>
+                {% endif %}
+                <a class="delete" href="/delete/{{ habit[0] }}">✖</a>
+            </div>
+        </li>
+        {% endfor %}
+    </ul>
+</div>
+</body>
+</html>
+

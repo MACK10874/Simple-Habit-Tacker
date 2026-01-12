@@ -1,0 +1,146 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 420px;
+    margin: 40px auto;
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+p {
+    text-align: center;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+/* Date */
+.date {
+    text-align: center;
+    color: #777;
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+/* Progress Bar */
+.progress-box {
+    margin-bottom: 20px;
+}
+.progress-text {
+    font-size: 14px;
+    margin-bottom: 6px;
+    color: #444;
+}
+.progress-bar {
+    background: #ddd;
+    height: 12px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #4CAF50, #66bb6a);
+}
+
+/* Form */
+form {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+input {
+    flex: 1;
+    padding: 12px;
+    font-size: 16px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+button {
+    padding: 12px 18px;
+    font-size: 16px;
+    border-radius: 8px;
+    border: none;
+    background: #667eea;
+    color: white;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+button:hover {
+    background: #5563c1;
+}
+
+/* Habit list */
+ul {
+    list-style: none;
+    padding: 0;
+}
+li {
+    background: #f5f7ff;
+    margin-bottom: 10px;
+    padding: 12px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 16px;
+}
+li small {
+    display: block;
+    font-size: 12px;
+    color: #ff5722;
+    margin-top: 4px;
+}
+li a {
+    margin-left: 8px;
+    text-decoration: none;
+    padding: 5px 8px;
+    border-radius: 5px;
+    font-size: 14px;
+}
+.complete {
+    background: #4CAF50;
+    color: white;
+}
+.delete {
+    background: #f44336;
+    color: white;
+}
+.done {
+    background: #d4f8d4;
+    text-decoration: line-through;
+    color: #555;
+}
+
+/* Mobile friendly */
+@media (max-width: 500px) {
+    .container {
+        margin: 20px;
+        padding: 20px;
+    }
+    h1 {
+        font-size: 22px;
+    }
+    button {
+        padding: 12px;
+        font-size: 15px;
+    }
+}
+
+
